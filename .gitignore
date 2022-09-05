@@ -1,6 +1,0 @@
-.qmake.stash
-.qtc_clangd/
-Makefile
-Makefile.Debug
-Makefile.Release
-debug/
