@@ -20,10 +20,12 @@ DEPENDPATH += C:/SFML-2.5.1/include
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    notes.cpp \
     secondwindow.cpp
 
 HEADERS += \
     mainwindow.h \
+    notes.h \
     secondwindow.h
 
 FORMS += \
@@ -35,6 +37,3 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-DISTFILES += \
-    .gitignore

@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Dialog
+class Ui_secondwindow
 {
 public:
     QPushButton *do_1;
@@ -61,65 +61,65 @@ public:
     QLabel *label_soldiez;
     QLabel *label_lyadiez;
 
-    void setupUi(QDialog *Dialog)
+    void setupUi(QDialog *secondwindow)
     {
-        if (Dialog->objectName().isEmpty())
-            Dialog->setObjectName(QString::fromUtf8("Dialog"));
-        Dialog->resize(805, 709);
-        do_1 = new QPushButton(Dialog);
+        if (secondwindow->objectName().isEmpty())
+            secondwindow->setObjectName(QString::fromUtf8("secondwindow"));
+        secondwindow->resize(805, 709);
+        do_1 = new QPushButton(secondwindow);
         do_1->setObjectName(QString::fromUtf8("do_1"));
         do_1->setGeometry(QRect(10, 360, 61, 331));
         do_1->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        re = new QPushButton(Dialog);
+        re = new QPushButton(secondwindow);
         re->setObjectName(QString::fromUtf8("re"));
         re->setGeometry(QRect(70, 360, 61, 331));
         re->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        mi = new QPushButton(Dialog);
+        mi = new QPushButton(secondwindow);
         mi->setObjectName(QString::fromUtf8("mi"));
         mi->setGeometry(QRect(130, 360, 61, 331));
         mi->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        fa = new QPushButton(Dialog);
+        fa = new QPushButton(secondwindow);
         fa->setObjectName(QString::fromUtf8("fa"));
         fa->setGeometry(QRect(190, 360, 61, 331));
         fa->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        sol = new QPushButton(Dialog);
+        sol = new QPushButton(secondwindow);
         sol->setObjectName(QString::fromUtf8("sol"));
         sol->setGeometry(QRect(250, 360, 61, 331));
         sol->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        lya = new QPushButton(Dialog);
+        lya = new QPushButton(secondwindow);
         lya->setObjectName(QString::fromUtf8("lya"));
         lya->setGeometry(QRect(310, 360, 61, 331));
         lya->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        si = new QPushButton(Dialog);
+        si = new QPushButton(secondwindow);
         si->setObjectName(QString::fromUtf8("si"));
         si->setGeometry(QRect(370, 360, 61, 331));
         si->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
 ""));
-        do_2 = new QPushButton(Dialog);
+        do_2 = new QPushButton(secondwindow);
         do_2->setObjectName(QString::fromUtf8("do_2"));
         do_2->setGeometry(QRect(430, 360, 61, 331));
         do_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        dodiez = new QPushButton(Dialog);
+        dodiez = new QPushButton(secondwindow);
         dodiez->setObjectName(QString::fromUtf8("dodiez"));
         dodiez->setGeometry(QRect(50, 360, 41, 231));
         dodiez->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)"));
-        rediez = new QPushButton(Dialog);
+        rediez = new QPushButton(secondwindow);
         rediez->setObjectName(QString::fromUtf8("rediez"));
         rediez->setGeometry(QRect(120, 360, 41, 231));
         rediez->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)"));
-        fadiez = new QPushButton(Dialog);
+        fadiez = new QPushButton(secondwindow);
         fadiez->setObjectName(QString::fromUtf8("fadiez"));
         fadiez->setGeometry(QRect(230, 360, 41, 231));
         fadiez->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)"));
-        soldiez = new QPushButton(Dialog);
+        soldiez = new QPushButton(secondwindow);
         soldiez->setObjectName(QString::fromUtf8("soldiez"));
         soldiez->setGeometry(QRect(290, 360, 41, 231));
         soldiez->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)"));
-        pushButton_5 = new QPushButton(Dialog);
+        pushButton_5 = new QPushButton(secondwindow);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setGeometry(QRect(350, 360, 41, 231));
         pushButton_5->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)"));
-        verticalLayoutWidget = new QWidget(Dialog);
+        verticalLayoutWidget = new QWidget(secondwindow);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(510, 450, 251, 241));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
@@ -140,73 +140,73 @@ public:
 
         verticalLayout->addWidget(radioButton_3);
 
-        buffer_2 = new QPushButton(Dialog);
+        buffer_2 = new QPushButton(secondwindow);
         buffer_2->setObjectName(QString::fromUtf8("buffer_2"));
         buffer_2->setGeometry(QRect(510, 360, 251, 81));
         buffer_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)"));
-        button_file = new QPushButton(Dialog);
+        button_file = new QPushButton(secondwindow);
         button_file->setObjectName(QString::fromUtf8("button_file"));
         button_file->setGeometry(QRect(10, 260, 71, 91));
         button_file->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)\n"
 ""));
-        button_go = new QPushButton(Dialog);
+        button_go = new QPushButton(secondwindow);
         button_go->setObjectName(QString::fromUtf8("button_go"));
         button_go->setGeometry(QRect(510, 260, 71, 91));
         button_go->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)\n"
 ""));
-        pushButton = new QPushButton(Dialog);
+        pushButton = new QPushButton(secondwindow);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(600, 260, 71, 91));
         pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)\n"
 ""));
-        textEdit = new QTextEdit(Dialog);
+        textEdit = new QTextEdit(secondwindow);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
         textEdit->setGeometry(QRect(80, 260, 411, 91));
-        label_do_1 = new QLabel(Dialog);
+        label_do_1 = new QLabel(secondwindow);
         label_do_1->setObjectName(QString::fromUtf8("label_do_1"));
         label_do_1->setGeometry(QRect(10, 630, 51, 51));
-        label_do_2 = new QLabel(Dialog);
+        label_do_2 = new QLabel(secondwindow);
         label_do_2->setObjectName(QString::fromUtf8("label_do_2"));
         label_do_2->setGeometry(QRect(430, 630, 51, 51));
-        label_si = new QLabel(Dialog);
+        label_si = new QLabel(secondwindow);
         label_si->setObjectName(QString::fromUtf8("label_si"));
         label_si->setGeometry(QRect(370, 630, 51, 51));
-        label_lya = new QLabel(Dialog);
+        label_lya = new QLabel(secondwindow);
         label_lya->setObjectName(QString::fromUtf8("label_lya"));
         label_lya->setGeometry(QRect(310, 630, 51, 51));
-        label_sol = new QLabel(Dialog);
+        label_sol = new QLabel(secondwindow);
         label_sol->setObjectName(QString::fromUtf8("label_sol"));
         label_sol->setGeometry(QRect(250, 630, 51, 51));
-        label_fa = new QLabel(Dialog);
+        label_fa = new QLabel(secondwindow);
         label_fa->setObjectName(QString::fromUtf8("label_fa"));
         label_fa->setGeometry(QRect(190, 630, 51, 51));
-        label_mi = new QLabel(Dialog);
+        label_mi = new QLabel(secondwindow);
         label_mi->setObjectName(QString::fromUtf8("label_mi"));
         label_mi->setGeometry(QRect(130, 630, 51, 51));
-        label_re = new QLabel(Dialog);
+        label_re = new QLabel(secondwindow);
         label_re->setObjectName(QString::fromUtf8("label_re"));
         label_re->setGeometry(QRect(70, 630, 51, 51));
-        label_dodiez = new QLabel(Dialog);
+        label_dodiez = new QLabel(secondwindow);
         label_dodiez->setObjectName(QString::fromUtf8("label_dodiez"));
         label_dodiez->setGeometry(QRect(50, 550, 41, 41));
         label_dodiez->setStyleSheet(QString::fromUtf8("\n"
 "color: rgb(255, 255, 255);"));
-        label_rediez = new QLabel(Dialog);
+        label_rediez = new QLabel(secondwindow);
         label_rediez->setObjectName(QString::fromUtf8("label_rediez"));
         label_rediez->setGeometry(QRect(120, 550, 41, 41));
         label_rediez->setStyleSheet(QString::fromUtf8("\n"
 "color: rgb(255, 255, 255);"));
-        label_fadiez = new QLabel(Dialog);
+        label_fadiez = new QLabel(secondwindow);
         label_fadiez->setObjectName(QString::fromUtf8("label_fadiez"));
         label_fadiez->setGeometry(QRect(230, 550, 41, 41));
         label_fadiez->setStyleSheet(QString::fromUtf8("\n"
 "color: rgb(255, 255, 255);"));
-        label_soldiez = new QLabel(Dialog);
+        label_soldiez = new QLabel(secondwindow);
         label_soldiez->setObjectName(QString::fromUtf8("label_soldiez"));
         label_soldiez->setGeometry(QRect(290, 550, 41, 41));
         label_soldiez->setStyleSheet(QString::fromUtf8("\n"
 "color: rgb(255, 255, 255);"));
-        label_lyadiez = new QLabel(Dialog);
+        label_lyadiez = new QLabel(secondwindow);
         label_lyadiez->setObjectName(QString::fromUtf8("label_lyadiez"));
         label_lyadiez->setGeometry(QRect(350, 550, 41, 41));
         label_lyadiez->setStyleSheet(QString::fromUtf8("\n"
@@ -244,14 +244,14 @@ public:
         label_soldiez->raise();
         label_lyadiez->raise();
 
-        retranslateUi(Dialog);
+        retranslateUi(secondwindow);
 
-        QMetaObject::connectSlotsByName(Dialog);
+        QMetaObject::connectSlotsByName(secondwindow);
     } // setupUi
 
-    void retranslateUi(QDialog *Dialog)
+    void retranslateUi(QDialog *secondwindow)
     {
-        Dialog->setWindowTitle(QCoreApplication::translate("Dialog", "Dialog", nullptr));
+        secondwindow->setWindowTitle(QCoreApplication::translate("secondwindow", "Dialog", nullptr));
         do_1->setText(QString());
         re->setText(QString());
         mi->setText(QString());
@@ -265,14 +265,14 @@ public:
         fadiez->setText(QString());
         soldiez->setText(QString());
         pushButton_5->setText(QString());
-        radioButton->setText(QCoreApplication::translate("Dialog", "Empty", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("Dialog", "Keys", nullptr));
-        radioButton_3->setText(QCoreApplication::translate("Dialog", "Notes", nullptr));
-        buffer_2->setText(QCoreApplication::translate("Dialog", "Draw:off", nullptr));
-        button_file->setText(QCoreApplication::translate("Dialog", "File", nullptr));
-        button_go->setText(QCoreApplication::translate("Dialog", "Go", nullptr));
-        pushButton->setText(QCoreApplication::translate("Dialog", "Stop", nullptr));
-        textEdit->setHtml(QCoreApplication::translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        radioButton->setText(QCoreApplication::translate("secondwindow", "Empty", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("secondwindow", "Keys", nullptr));
+        radioButton_3->setText(QCoreApplication::translate("secondwindow", "Notes", nullptr));
+        buffer_2->setText(QCoreApplication::translate("secondwindow", "Draw:off", nullptr));
+        button_file->setText(QCoreApplication::translate("secondwindow", "File", nullptr));
+        button_go->setText(QCoreApplication::translate("secondwindow", "Go", nullptr));
+        pushButton->setText(QCoreApplication::translate("secondwindow", "Stop", nullptr));
+        textEdit->setHtml(QCoreApplication::translate("secondwindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
@@ -298,7 +298,7 @@ public:
 };
 
 namespace Ui {
-    class Dialog: public Ui_Dialog {};
+    class secondwindow: public Ui_secondwindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE
