@@ -136,7 +136,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string/>
@@ -233,21 +234,21 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QRadioButton" name="radioButton">
+     <widget class="QRadioButton" name="radioButton_0">
       <property name="text">
        <string>Empty</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radioButton_2">
+     <widget class="QRadioButton" name="radioButton_note">
       <property name="text">
        <string>Keys</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radioButton_3">
+     <widget class="QRadioButton" name="radioButton_button">
       <property name="text">
        <string>Notes</string>
       </property>
@@ -265,7 +266,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0)</string>
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Draw:off</string>
@@ -281,7 +283,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0)
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
 </string>
    </property>
    <property name="text">
@@ -298,11 +301,16 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0)
+    <string notr="true">background-color: rgb(0, 0, 0);
+border-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255);
 </string>
    </property>
    <property name="text">
-    <string>Go</string>
+    <string>go</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -315,7 +323,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0)
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
 </string>
    </property>
    <property name="text">

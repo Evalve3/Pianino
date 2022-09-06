@@ -562,10 +562,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\evalv\\Documents\\kl\\ui_mainwindow.h"
+        "C:\\Users\\evalv\\Documents\\kl\\ui_secondwindow.h"
     ],
     "directory": "C:/Users/evalv/Documents/kl/.qtc_clangd",
-    "file": "C:/Users/evalv/Documents/kl/ui_mainwindow.h"
+    "file": "C:/Users/evalv/Documents/kl/ui_secondwindow.h"
 },
 {
     "arguments": [
@@ -633,9 +633,9 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\evalv\\Documents\\kl\\ui_secondwindow.h"
+        "C:\\Users\\evalv\\Documents\\kl\\ui_mainwindow.h"
     ],
     "directory": "C:/Users/evalv/Documents/kl/.qtc_clangd",
-    "file": "C:/Users/evalv/Documents/kl/ui_secondwindow.h"
+    "file": "C:/Users/evalv/Documents/kl/ui_mainwindow.h"
 }
 ]

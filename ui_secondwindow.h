@@ -39,9 +39,9 @@ public:
     QPushButton *pushButton_5;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
-    QRadioButton *radioButton_3;
+    QRadioButton *radioButton_0;
+    QRadioButton *radioButton_note;
+    QRadioButton *radioButton_button;
     QPushButton *buffer_2;
     QPushButton *button_file;
     QPushButton *button_go;
@@ -98,7 +98,8 @@ public:
         do_2 = new QPushButton(secondwindow);
         do_2->setObjectName(QString::fromUtf8("do_2"));
         do_2->setGeometry(QRect(430, 360, 61, 331));
-        do_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        do_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);"));
         dodiez = new QPushButton(secondwindow);
         dodiez->setObjectName(QString::fromUtf8("dodiez"));
         dodiez->setGeometry(QRect(50, 360, 41, 231));
@@ -125,39 +126,45 @@ public:
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        radioButton = new QRadioButton(verticalLayoutWidget);
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        radioButton_0 = new QRadioButton(verticalLayoutWidget);
+        radioButton_0->setObjectName(QString::fromUtf8("radioButton_0"));
 
-        verticalLayout->addWidget(radioButton);
+        verticalLayout->addWidget(radioButton_0);
 
-        radioButton_2 = new QRadioButton(verticalLayoutWidget);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        radioButton_note = new QRadioButton(verticalLayoutWidget);
+        radioButton_note->setObjectName(QString::fromUtf8("radioButton_note"));
 
-        verticalLayout->addWidget(radioButton_2);
+        verticalLayout->addWidget(radioButton_note);
 
-        radioButton_3 = new QRadioButton(verticalLayoutWidget);
-        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
+        radioButton_button = new QRadioButton(verticalLayoutWidget);
+        radioButton_button->setObjectName(QString::fromUtf8("radioButton_button"));
 
-        verticalLayout->addWidget(radioButton_3);
+        verticalLayout->addWidget(radioButton_button);
 
         buffer_2 = new QPushButton(secondwindow);
         buffer_2->setObjectName(QString::fromUtf8("buffer_2"));
         buffer_2->setGeometry(QRect(510, 360, 251, 81));
-        buffer_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)"));
+        buffer_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 255, 255);"));
         button_file = new QPushButton(secondwindow);
         button_file->setObjectName(QString::fromUtf8("button_file"));
         button_file->setGeometry(QRect(10, 260, 71, 91));
-        button_file->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)\n"
+        button_file->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         button_go = new QPushButton(secondwindow);
         button_go->setObjectName(QString::fromUtf8("button_go"));
         button_go->setGeometry(QRect(510, 260, 71, 91));
-        button_go->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)\n"
+        button_go->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
+"border-color: rgb(255, 255, 255);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
+        button_go->setCheckable(false);
         pushButton = new QPushButton(secondwindow);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(600, 260, 71, 91));
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0)\n"
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 255, 255);\n"
 ""));
         textEdit = new QTextEdit(secondwindow);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
@@ -265,12 +272,12 @@ public:
         fadiez->setText(QString());
         soldiez->setText(QString());
         pushButton_5->setText(QString());
-        radioButton->setText(QCoreApplication::translate("secondwindow", "Empty", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("secondwindow", "Keys", nullptr));
-        radioButton_3->setText(QCoreApplication::translate("secondwindow", "Notes", nullptr));
+        radioButton_0->setText(QCoreApplication::translate("secondwindow", "Empty", nullptr));
+        radioButton_note->setText(QCoreApplication::translate("secondwindow", "Keys", nullptr));
+        radioButton_button->setText(QCoreApplication::translate("secondwindow", "Notes", nullptr));
         buffer_2->setText(QCoreApplication::translate("secondwindow", "Draw:off", nullptr));
         button_file->setText(QCoreApplication::translate("secondwindow", "File", nullptr));
-        button_go->setText(QCoreApplication::translate("secondwindow", "Go", nullptr));
+        button_go->setText(QCoreApplication::translate("secondwindow", "go", nullptr));
         pushButton->setText(QCoreApplication::translate("secondwindow", "Stop", nullptr));
         textEdit->setHtml(QCoreApplication::translate("secondwindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"

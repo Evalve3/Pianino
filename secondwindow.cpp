@@ -4,10 +4,10 @@
 #include <QString>
 #include <QPainter>
 #include <QKeyEvent>
-#include <SFML/Audio.hpp>
 #include <thread>
 #include <QFileDialog>
 #include<QMessageBox>
+#include "notes.h"
 
 QString alp = "wetyuasdfghjk";
 QString nums = "0123456789";
@@ -16,41 +16,14 @@ unsigned int  count_clicked = 0;
 int const i_note = 13, count_positions = 13;
 int stats[count_positions] = { -1 };
 int positions[i_note][count_positions] = { 0 };
-
-sf::SoundBuffer buffer_do, buffer_dodiez, buffer_re, buffer_rediez, buffer_mi,  buffer_fa, buffer_fadiez, buffer_sol, buffer_soldiez, buffer_lya,buffer_lyadiez, buffer_si, buffer_do2;
-sf::Sound sound_do,sound_dodiez, sound_re, sound_rediez, sound_mi, sound_fa, sound_fadiez, sound_sol, sound_soldiez, sound_lya, sound_lyadiez, sound_si, sound_do2;
+notes note;
 
 secondwindow::secondwindow(QWidget* parent) :
     QDialog(parent),
     ui(new Ui::secondwindow)
 {
     ui->setupUi(this);
-    buffer_do.loadFromFile("res//do1.wav");
-    sound_do.setBuffer(buffer_do);
-    buffer_dodiez.loadFromFile("res//do#.wav");
-    sound_dodiez.setBuffer(buffer_dodiez);
-    buffer_re.loadFromFile("res//re.wav");
-    sound_re.setBuffer(buffer_re);
-    buffer_rediez.loadFromFile("res//re#.wav");
-    sound_rediez.setBuffer(buffer_rediez);
-    buffer_mi.loadFromFile("res//mi.wav");
-    sound_mi.setBuffer(buffer_mi);
-    buffer_fa.loadFromFile("res//fa.wav");
-    sound_fa.setBuffer(buffer_fa);
-    buffer_fadiez.loadFromFile("res//fa#.wav");
-    sound_fadiez.setBuffer(buffer_fadiez);
-    buffer_sol.loadFromFile("res//sol.wav");
-    sound_sol.setBuffer(buffer_sol);
-    buffer_soldiez.loadFromFile("res//sol#.wav");
-    sound_soldiez.setBuffer(buffer_soldiez);
-    buffer_lya.loadFromFile("res//lya.wav");
-    sound_lya.setBuffer(buffer_lya);
-    buffer_lyadiez.loadFromFile("res//lya#.wav");
-    sound_lyadiez.setBuffer(buffer_lyadiez);
-    buffer_si.loadFromFile("res//si.wav");
-    sound_si.setBuffer(buffer_si);
-    buffer_do2.loadFromFile("res//do2.wav");
-    sound_do2.setBuffer(buffer_do2);
+
 }
 
 secondwindow::~secondwindow()
@@ -150,170 +123,143 @@ void secondwindow::on_radioButton_button_clicked(bool checked)
 
 void secondwindow::on_do_1_pressed() {
 
-    if (sound_do.getStatus() != sf::Sound::Playing)
-        sound_do.play();
+    note.play_do1();
 }
 
 void secondwindow::on_do_1_released() {
 
-    if (sound_do.getStatus() == sf::Sound::Playing)
-        sound_do.stop();
+    note.stop_do1();
 }
 
 
 void secondwindow::on_dodiez_pressed() {
 
-    if (sound_dodiez.getStatus() != sf::Sound::Playing)
-        sound_dodiez.play();
+    note.play_dodiez();
 }
 
 void secondwindow::on_dodiez_released() {
 
-    if (sound_dodiez.getStatus() == sf::Sound::Playing)
-        sound_dodiez.stop();
+    note.stop_dodiez();
 }
 
 
 void secondwindow::on_re_pressed()
 {
-        if (sound_re.getStatus() != sf::Sound::Playing)
-            sound_re.play();
+    note.play_re();
 }
 
 void secondwindow::on_re_released()
 {
-    if (sound_re.getStatus())
-        sound_re.stop();
+    note.stop_re();
 }
 
 
 void secondwindow::on_rediez_pressed() {
-
-    if (sound_rediez.getStatus() != sf::Sound::Playing)
-        sound_rediez.play();
+     note.play_rediez();
 }
 
 void secondwindow::on_rediez_released()
 {
-    if (sound_rediez.getStatus())
-        sound_rediez.stop();
+    note.stop_rediez();
 }
 
 
 void secondwindow::on_mi_pressed()
 {
-    if (sound_mi.getStatus() != sf::Sound::Playing)
-        sound_mi.play();
+    note.play_mi();
 }
 
 void secondwindow::on_mi_released()
 {
-    if (sound_mi.getStatus())
-        sound_mi.stop();
+    note.stop_mi();
 }
 
 
 void secondwindow::on_fa_pressed()
 {
-    if (sound_fa.getStatus() != sf::Sound::Playing)
-        sound_fa.play();
+    note.play_fa();
 }
 
 void secondwindow::on_fa_released()
 {
-    if (sound_fa.getStatus())
-        sound_fa.stop();
+    note.stop_fa();
 }
 
 
 void secondwindow::on_fadiez_pressed()
 {
-    if (sound_fadiez.getStatus() != sf::Sound::Playing)
-        sound_fadiez.play();
+    note.play_fadiez();
 }
 
 void secondwindow::on_fadiez_released()
 {
-    if (sound_fadiez.getStatus())
-        sound_fadiez.stop();
+    note.stop_fadiez();
 }
 
 
 void secondwindow::on_sol_pressed()
 {
-    if (sound_sol.getStatus() != sf::Sound::Playing)
-        sound_sol.play();
+    note.play_sol();
 }
 
 void secondwindow::on_sol_released()
 {
-    if (sound_sol.getStatus())
-        sound_sol.stop();
+    note.stop_sol();
 }
 
 
 void secondwindow::on_soldiez_pressed()
 {
-    if (sound_soldiez.getStatus() != sf::Sound::Playing)
-        sound_soldiez.play();
+    note.play_soldiez();
 }
 
 void secondwindow::on_soldiez_released()
 {
-    if (sound_soldiez.getStatus())
-        sound_soldiez.stop();
+    note.stop_soldiez();
 }
 
 
 void secondwindow::on_lya_pressed()
 {
-    if (sound_lya.getStatus() != sf::Sound::Playing)
-        sound_lya.play();
+    note.play_lya();
 }
 
 void secondwindow::on_lya_released()
 {
-    if (sound_lya.getStatus())
-        sound_lya.stop();
+    note.stop_lya();
 }
 
 
 void secondwindow::on_lyadiez_pressed()
 {
-    if (sound_lyadiez.getStatus() != sf::Sound::Playing)
-        sound_lyadiez.play();
+    note.play_lyadiez();
 }
 
 void secondwindow::on_lyadiez_released()
 {
-    if (sound_lyadiez.getStatus())
-        sound_lyadiez.stop();
+    note.stop_lyadiez();
 }
 
 
 void secondwindow::on_si_pressed()
 {
-    if (sound_si.getStatus() != sf::Sound::Playing)
-        sound_si.play();
+    note.play_si();
 }
 
 void secondwindow::on_si_released()
 {
-    if (sound_si.getStatus())
-        sound_si.stop();
+    note.stop_si();
 }
 
 
 void secondwindow::on_do_2_pressed()
 {
-    if (sound_do2.getStatus() != sf::Sound::Playing)
-        sound_do2.play();
+    note.play_do2();
 }
 
 void secondwindow::on_do_2_released()
 {
-    if (sound_do2.getStatus())
-        sound_do2.stop();
+    note.stop_do2();
 }
 
 
@@ -417,68 +363,55 @@ void secondwindow::keyReleaseEvent(QKeyEvent* e) {
     else {
         if (e->key() == Qt::Key_A) {
             on_do_1_clicked();
-            if (sound_do.getStatus())
-                sound_do.stop();
+            note.stop_do1();
         }
         if (e->key() == Qt::Key_W) {
             on_dodiez_clicked();
-            if (sound_dodiez.getStatus())
-                sound_dodiez.stop();
+            note.stop_dodiez();
         }
         if (e->key() == Qt::Key_S) {
             on_re_clicked();
-            if (sound_re.getStatus())
-                sound_re.stop();
+            note.stop_re();
         }
         if (e->key() == Qt::Key_E) {
             on_rediez_clicked();
-            if (sound_rediez.getStatus())
-                sound_rediez.stop();
+            note.stop_rediez();
         }
         if (e->key() == Qt::Key_D) {
             on_mi_clicked();
-            if (sound_mi.getStatus())
-                sound_mi.stop();
+            note.stop_mi();
         }
         if (e->key() == Qt::Key_F) {
             on_fa_clicked();
-            if (sound_fa.getStatus())
-                sound_fa.stop();
+            note.stop_fa();
         }
         if (e->key() == Qt::Key_T) {
             on_fadiez_clicked();
-            if (sound_fadiez.getStatus())
-                sound_fadiez.stop();
+            note.stop_fadiez();
         }
         if (e->key() == Qt::Key_G) {
             on_sol_clicked();
-            if (sound_sol.getStatus())
-                sound_sol.stop();
+            note.stop_sol();
         }
         if (e->key() == Qt::Key_Y) {
             on_soldiez_clicked();
-            if (sound_soldiez.getStatus())
-                sound_soldiez.stop();
+            note.stop_soldiez();
         }
         if (e->key() == Qt::Key_H) {
             on_lya_clicked();
-            if (sound_lya.getStatus())
-                sound_lya.stop();
+            note.stop_lya();
         }
         if (e->key() == Qt::Key_U) {
             on_lyadiez_clicked();
-            if (sound_lyadiez.getStatus())
-                sound_lyadiez.stop();
+            note.stop_lyadiez();
         }
         if (e->key() == Qt::Key_J) {
             on_si_clicked();
-            if (sound_si.getStatus())
-                sound_si.stop();
+            note.stop_si();
         }
         if (e->key() == Qt::Key_K) {
             on_do_2_clicked();
-            if (sound_do2.getStatus())
-                sound_do2.stop();
+            note.stop_do2();
         }
     }
 }
@@ -737,35 +670,8 @@ void secondwindow::paintEvent(QPaintEvent* event)
 
 
 void all_thr(QString out) {
-    sf::SoundBuffer buffer_do_thr, buffer_dodiez_thr, buffer_re_thr, buffer_rediez_thr, buffer_mi_thr, buffer_fa_thr, buffer_fadiez_thr, buffer_sol_thr, buffer_soldiez_thr, buffer_lya_thr, buffer_lyadiez_thr, buffer_si_thr, buffer_do2_thr;
-    sf::Sound sound_do_thr, sound_dodiez_thr, sound_re_thr, sound_rediez_thr, sound_mi_thr, sound_fa_thr, sound_fadiez_thr, sound_sol_thr, sound_soldiez_thr, sound_lya_thr, sound_lyadiez_thr, sound_si_thr, sound_do2_thr;
+    notes thr_note;
     thr_running = true;
-    buffer_do_thr.loadFromFile("res\\do1.wav");
-    sound_do_thr.setBuffer(buffer_do_thr);
-    buffer_dodiez_thr.loadFromFile("res\\do#.wav");
-    sound_dodiez_thr.setBuffer(buffer_dodiez_thr);
-    buffer_re_thr.loadFromFile("res\\re.wav");
-    sound_re_thr.setBuffer(buffer_re_thr);
-    buffer_rediez_thr.loadFromFile("res\\re#.wav");
-    sound_rediez_thr.setBuffer(buffer_rediez_thr);
-    buffer_mi_thr.loadFromFile("res\\mi.wav");
-    sound_mi_thr.setBuffer(buffer_mi_thr);
-    buffer_fa_thr.loadFromFile("res\\fa.wav");
-    sound_fa_thr.setBuffer(buffer_fa_thr);
-    buffer_fadiez_thr.loadFromFile("res\\fa#.wav");
-    sound_fadiez_thr.setBuffer(buffer_fadiez_thr);
-    buffer_sol_thr.loadFromFile("res\\sol.wav");
-    sound_sol_thr.setBuffer(buffer_sol_thr);
-    buffer_soldiez_thr.loadFromFile("res\\sol#.wav");
-    sound_soldiez_thr.setBuffer(buffer_soldiez_thr);
-    buffer_lya_thr.loadFromFile("res\\lya.wav");
-    sound_lya_thr.setBuffer(buffer_lya_thr);
-    buffer_lyadiez_thr.loadFromFile("res\\lya#.wav");
-    sound_lyadiez_thr.setBuffer(buffer_lyadiez_thr);
-    buffer_si_thr.loadFromFile("res\\si.wav");
-    sound_si_thr.setBuffer(buffer_si_thr);
-    buffer_do2_thr.loadFromFile("res\\do2.wav");
-    sound_do2_thr.setBuffer(buffer_do2_thr);
     stop_music = false;
     for (int i = 0; i < out.length(); i++) {
         if (alp.contains(out[i])) {
@@ -784,74 +690,69 @@ void all_thr(QString out) {
             i--;
             if (!stop_music) {
                 if (QString::localeAwareCompare(tmp_note, QChar('a')) == 0) {
-                    sound_do_thr.play();
+                    thr_note.play_do1();
                     Sleep(time);
-                    sound_do_thr.stop();
+                    thr_note.stop_do1();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('s')) == 0) {
-                    sound_re_thr.play();
+                    thr_note.play_re();
                     Sleep(time);
-                    sound_re_thr.stop();
+                    thr_note.stop_re();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('d')) == 0) {
-                    sound_mi_thr.play();
+                    thr_note.play_mi();
                     Sleep(time);
-                    sound_mi_thr.stop();
+                    thr_note.stop_mi();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('f')) == 0) {
-                    sound_fa_thr.play();
+                    thr_note.play_fa();
                     Sleep(time);
-                    sound_fa_thr.stop();
+                    thr_note.stop_fa();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('g')) == 0) {
-                    sound_sol_thr.play();
+                    thr_note.play_sol();
                     Sleep(time);
-                    sound_sol_thr.stop();
+                    thr_note.stop_sol();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('h')) == 0) {
-                    sound_lya_thr.play();
+                    thr_note.play_lya();
                     Sleep(time);
-                    sound_lya_thr.stop();
+                    thr_note.stop_lya();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('j')) == 0) {
-                    sound_si_thr.play();
+                    thr_note.play_si();
                     Sleep(time);
-                    sound_si_thr.stop();
+                    thr_note.stop_si();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('k')) == 0) {
-                    sound_do2_thr.play();
+                    thr_note.play_do2();
                     Sleep(time);
-                    sound_do2_thr.stop();
+                    thr_note.stop_do2();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('w')) == 0) {
-                    sound_dodiez_thr.play();
+                    thr_note.play_dodiez();
                     Sleep(time);
-                    sound_dodiez_thr.stop();
+                    thr_note.stop_dodiez();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('e')) == 0) {
-                    sound_rediez_thr.play();
+                    thr_note.play_rediez();
                     Sleep(time);
-                    sound_rediez_thr.stop();
-                }
-                if (QString::localeAwareCompare(tmp_note, QChar('y')) == 0) {
-                    sound_fadiez_thr.play();
-                    Sleep(time);
-                    sound_fadiez_thr.stop();
+                    thr_note.stop_rediez();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('t')) == 0) {
-                    sound_fadiez_thr.play();
+                    thr_note.play_fadiez();
                     Sleep(time);
-                    sound_fadiez_thr.stop();
+                    thr_note.stop_fadiez();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('u')) == 0) {
-                    sound_soldiez_thr.play();
+                    thr_note.play_soldiez();
                     Sleep(time);
-                    sound_soldiez_thr.stop();
+                    thr_note.stop_soldiez();
                 }
                 if (QString::localeAwareCompare(tmp_note, QChar('i')) == 0) {
-                    sound_lyadiez_thr.play();
+                    thr_note.play_lyadiez();
                     Sleep(time);
-                    sound_lyadiez_thr.stop();
+                    thr_note.stop_lyadiez();
                 }
             }
             else {
