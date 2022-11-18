@@ -1,22 +1,6 @@
 #include "secondwindow.h"
 #include "ui_secondwindow.h"
-#include <QLabel>
-#include <QString>
-#include <QPainter>
-#include <QKeyEvent>
-#include <thread>
-#include <QFileDialog>
-#include<QMessageBox>
-#include "notes.h"
-
-QString alp = "wetyuasdfghjk";
-QString nums = "0123456789";
-bool paint = false,stop_music = false, thr_running = false;
-unsigned int  count_clicked = 0;
-int const i_note = 13, count_positions = 13;
-int stats[count_positions] = { -1 };
-int positions[i_note][count_positions] = { 0 };
-notes note;
+#
 
 secondwindow::secondwindow(QWidget* parent) :
     QDialog(parent),
@@ -29,51 +13,6 @@ secondwindow::secondwindow(QWidget* parent) :
 secondwindow::~secondwindow()
 {
     delete ui;
-}
-
-void secondwindow:: PrintList(Element*& current) {
-    Element* next, * one;
-    one = current;
-            ui->label_do_1->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_re->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_mi->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_fa->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_sol->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_lya->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_si->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_do_2->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_dodiez->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_rediez->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_fadiez->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_soldiez->setText(current->write);
-            next = current->address;
-            current = next;
-            ui->label_lyadiez->setText(current->write);
-            next = current->address;
-            current = next;
-           current = one;
 }
 
 void secondwindow::slot_0() {
@@ -100,23 +39,42 @@ void secondwindow::on_radioButton_0_clicked(bool checked)
     }
 }
 
-void secondwindow::on_radioButton_note_clicked(bool checked)
+void secondwindow::on_radioButton_button_clicked(bool checked)
 {
-    if (checked) {
-        QString notes[i_note] = { "   do","   re","   mi", "   fa", "   sol", "   lya", "   si","   do","   #do", "   #re","   #fa", "   #sol", "   #lya" };
-        Element* head_adress = MadeList(i_note,notes);
-        PrintList(head_adress);
-        DeleteList(head_adress);
+    if (checked){
+        ui->label_do_1->setText("do");
+        ui->label_dodiez->setText("do#");
+        ui->label_re->setText("re");
+        ui->label_rediez->setText("re#");
+        ui->label_mi->setText("mi");
+        ui->label_fa->setText("fa");
+        ui->label_fadiez->setText("fa#");
+        ui->label_sol->setText("sol");
+        ui->label_soldiez->setText("sol#");
+        ui->label_lya->setText("lya");
+        ui->label_lyadiez->setText("lya#");
+        ui->label_si->setText("si");
+        ui->label_do_2->setText("do");
     }
 }
 
-void secondwindow::on_radioButton_button_clicked(bool checked)
+void secondwindow::on_radioButton_note_clicked(bool checked)
 {
     if (checked) {
-        QString buttons[13] = { "   A","   S","   D", "   F", "   G", "   H", "   J","   K","   W", "   E","   T", "   Y", "   U" };
-        Element* head_adress = MadeList(i_note, buttons);
-        PrintList(head_adress);
-        DeleteList(head_adress);
+        ui->label_do_1->setText("A");
+        ui->label_dodiez->setText("S");
+        ui->label_re->setText("D");
+        ui->label_rediez->setText("F");
+        ui->label_mi->setText("G");
+        ui->label_fa->setText("H");
+        ui->label_fadiez->setText("J");
+        ui->label_sol->setText("K");
+        ui->label_soldiez->setText("W");
+        ui->label_lya->setText("E");
+        ui->label_lyadiez->setText("T");
+        ui->label_si->setText("Y");
+        ui->label_do_2->setText("U");
+
     }
 }
 
@@ -669,7 +627,7 @@ void secondwindow::paintEvent(QPaintEvent* event)
  }
 
 
-void all_thr(QString out) {
+ void secondwindow::all_thr(QString out) {
     notes thr_note;
     thr_running = true;
     stop_music = false;
@@ -777,7 +735,7 @@ void secondwindow::on_button_go_clicked() {
     }
     ui->textEdit->setText(out);
     if (!thr_running) {
-        std::thread thr_sound(all_thr, out);
+        std::thread thr_sound(&secondwindow::all_thr,this, out);
         thr_sound.detach();
     }
 }

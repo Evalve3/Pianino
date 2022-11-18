@@ -8,6 +8,12 @@
 #include <Windows.h>
 #include <QPainter>
 #include <QLabel>
+#include "notes.h"
+#include <QString>
+#include <QKeyEvent>
+#include <thread>
+#include <QFileDialog>
+#include<QMessageBox>
 
 namespace Ui {
 class secondwindow;
@@ -19,6 +25,14 @@ class secondwindow : public QDialog
 public:
     explicit secondwindow(QWidget* parent = nullptr) ;
     ~secondwindow();
+    const  QString alp = "wetyuasdfghjk";
+    const QString nums = "0123456789";
+    int const i_note = 13, count_positions = 13;
+    unsigned int  count_clicked = 0;
+    int stats[13] = { -1 };
+    int positions[13][13];
+    bool paint = false,stop_music = false, thr_running = false;
+    notes note;
 private:
     Ui::secondwindow* ui;
 private slots:
@@ -69,44 +83,12 @@ private slots:
     void on_buffer_2_clicked();
     void on_button_file_clicked();
     void on_pushButton_clicked();
+    void all_thr(QString out);
 
 protected:
     void keyPressEvent(QKeyEvent* e) override;
     void keyReleaseEvent(QKeyEvent* e) override;
     void paintEvent(QPaintEvent* event);
 
-public:
-    struct Element {
-        QString write;
-        Element* address;
-    };
-    Element* MadeList(unsigned lenght,QString str[13]) {
-        Element* cur = 0, * prev = 0, * one = 0;
-
-        for (unsigned int i = 1; i <= lenght; i++) {
-            cur = new Element;
-            cur->write = str[i-1];
-            if (i > 1) {
-                prev->address= cur;
-
-            }
-            else {
-                  one = cur;
-            }
-            prev = cur;
-        }
-        cur->address = 0;
-        return one;
-
-    }
-    void PrintList(Element*& current);
-    void DeleteList(Element*& begin) {
-        Element* next;
-        while (begin) {
-            next = begin->address;
-             delete begin;
-            begin = next;
-        }
-    }
 };
 #endif // SECONDWINDOW_H
